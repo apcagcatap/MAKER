@@ -3,12 +3,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Reset default browser margins so pages align flush */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 /* Utility Classes - Replacing Tailwind */
 .flex {
   display: flex;
@@ -590,10 +584,15 @@ body.layout-body {
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
+html, body {
+  margin: 0;
+  padding: 0;
+}
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  margin: 0;
 }
 
 .actions {

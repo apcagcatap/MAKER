@@ -80,8 +80,9 @@ function Header() {
         <div className="flex items-center gap-3 text-sm">
           <button className="account-btn flex items-center gap-2">
             <span>Account</span>
-            <span className="avatar-icon">👤</span>
+            <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">👤</span>
           </button>
+          <button className="logout-btn">Logout</button>
         </div>
       </div>
     </header>
