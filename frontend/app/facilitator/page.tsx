@@ -60,6 +60,65 @@ export default function FacilitatorDashboard() {
           </div>
         </div>
       </section>
+
+      <section className="content-shell">
+        <div className="stats-grid">
+          <div>
+            <div className="stat-card from-emerald-500 to-emerald-600">
+              <div>
+                <div className="stat-label">Total Active Participants</div>
+                <div className="stat-value">100</div>
+              </div>
+              <div className="stat-icon">👥</div>
+            </div>
+          </div>
+          <div>
+            <div className="stat-card from-sky-500 to-blue-600">
+              <div>
+                <div className="stat-label">Ongoing Quests</div>
+                <div className="stat-value">5</div>
+              </div>
+              <div className="stat-icon">🎯</div>
+            </div>
+          </div>
+          <div>
+            <div className="stat-card from-pink-500 to-pink-600">
+              <div>
+                <div className="stat-label">Disengaged Participants</div>
+                <div className="stat-value">5</div>
+              </div>
+              <div className="stat-icon">⛔</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="card quests-shell">
+          <div className="quests-header">
+            <h3 className="quests-title">Recent Submissions</h3>
+            <a className="quests-link">View all submissions</a>
+          </div>
+
+          <div className="quests-grid">
+            <div className="quest-card">
+              <div className="quest-card-title">ARDUINO01</div>
+              <p className="quest-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+            </div>
+
+            <div className="quest-card">
+              <div className="quest-card-title">ARDUINO01</div>
+              <p className="quest-desc">Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '1rem' }} className="card glass">
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+              <button className="start-btn">Create New Quest</button>
+              <button className="start-btn">View Analytics</button>
+              <button className="start-btn">View Progress</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
