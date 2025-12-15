@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const currentQuest = {
   department: {
@@ -26,7 +27,7 @@ export default function FacilitatorDashboard() {
         <div className="hero-content facilitator-hero">
           <Owl />
             <div className="hero-text">
-            <h1 className="text-3xl md-text-4xl font-semibold">Hi there, {facilitator.name}</h1>
+            <h1 className="text-3xl md-text-5xl font-semibold">Hi there, {facilitator.name}</h1>
           </div>
         </div>
       </section>
@@ -92,9 +93,7 @@ function Header() {
 function Owl() {
   return (
     <div className="owl">
-      <span role="img" aria-label="owl">
-        🦉
-      </span>
+      <Image src="/hismarty.png" alt="hismarty" width={420} height={420} className="owl-img" />
     </div>
   );
 }

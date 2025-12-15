@@ -418,8 +418,8 @@ html, body {
   .facilitator-hero {
     flex-direction: column !important;
     gap: 1rem !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   .quest-info-section, .goal-section {
     flex-direction: column !important;
@@ -515,8 +515,8 @@ body.layout-body {
   .facilitator-hero {
     flex-direction: column !important;
     gap: 1rem !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   .quest-info-section, .goal-section {
     flex-direction: column !important;
@@ -565,8 +565,8 @@ body.layout-body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  opacity: 0.1;
-  background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=80");
+  opacity: 0.5;
+  background-image: url('/navbarBg.png');
   background-size: cover;
   background-position: center;
 }
@@ -585,15 +585,21 @@ body.layout-body {
 }
 
 .owl {
-  width: 7rem;
-  height: 7rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 15rem;
+  height: 15rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  margin-right: 0rem; /* pull the avatar closer to the heading */
+}
+
+.owl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .actions {
@@ -671,6 +677,11 @@ body.layout-body {
 @media (min-width: 768px) {
   .card {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .owl {
+    width: 12rem;
+    height: 12rem;
+    font-size: 6rem;
   }
 }
 
@@ -767,6 +778,14 @@ body.layout-body {
     flex-direction: column !important;
     gap: 1rem !important;
     width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .owl {
+    width: 10rem;
+    height: 10rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -914,13 +933,17 @@ body.layout-body {
 .facilitator-hero {
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  gap: 2rem;
+  justify-content: center;
+  text-align: center;
+  gap: 0rem;
 }
 
 .hero-text {
-  flex: 1;
+  flex: 0 1 55%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* left-align the heading so it sits next to the owl */
+  max-width: 48ch;
 }
 
 /* Facilitator Card Layout */
@@ -1033,6 +1056,7 @@ body.layout-body {
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-bottom: 3rem; /* reserve space for absolute action button on larger screens */
 }
 
 .goal-title {
@@ -1128,7 +1152,7 @@ body.layout-body {
 }
 
 .quests-table thead {
-  background: #f8fafc;
+  background: #f3f4f6;
 }
 
 .quests-table th {
@@ -1145,6 +1169,63 @@ body.layout-body {
   border-bottom: 1px solid #e5e7eb;
   color: #334155;
   font-size: 0.875rem;
+}
+
+/* Wireframe-like table styles */
+.quests-table thead th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+}
+
+.badge-btn,
+.certificate-btn {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0,0,0,0.04);
+  background: rgba(59,130,246,0.08);
+  color: #1e40af;
+  cursor: pointer;
+}
+
+.certificate-btn {
+  background: rgba(168,85,247,0.08);
+  color: #6d28d9;
+}
+
+.edit-action-btn {
+  padding: 0.35rem 0.65rem;
+  background: rgba(59,130,246,0.06);
+  border: 1px solid rgba(59,130,246,0.12);
+  color: #1e40af;
+  border-radius: 0.5rem;
+}
+
+.archive-btn {
+  padding: 0.35rem 0.65rem;
+  background: rgba(239,68,68,0.06);
+  border: 1px solid rgba(239,68,68,0.12);
+  color: #b91c1c;
+  border-radius: 0.5rem;
+}
+
+.publish-btn {
+  padding: 0.35rem 0.65rem;
+  background: rgba(16,185,129,0.06);
+  border: 1px solid rgba(16,185,129,0.12);
+  color: #047857;
+  border-radius: 0.5rem;
+}
+
+.status-published {
+  color: #059669;
+  font-weight: 600;
+}
+
+.status-draft {
+  color: #d97706;
+  font-weight: 600;
 }
 
 .quests-table tbody tr:hover {
@@ -1294,6 +1375,17 @@ body.layout-body {
 
   .add-quest-btn {
     width: 100%;
+  }
+
+  /* Ensure edit button doesn't overlay goal text on small screens */
+  .goal-section {
+    padding-bottom: 0; /* not needed when button flows below */
+  }
+
+  .edit-goal-btn {
+    position: static;
+    margin-top: 1rem;
+    align-self: flex-end;
   }
 }
 
